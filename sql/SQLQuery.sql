@@ -1,19 +1,23 @@
-CREATE TABLE t_products(
-    id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-    name VARCHAR(25),
-    type CHAR(20),
-    price SMALLMONEY,
-    quantity INT,
-    modified_date DATETIME
+DROP TABLE product
+
+CREATE TABLE product(
+    Id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    Name VARCHAR(25),
+    Type CHAR(20),
+    Price SMALLMONEY,
+    Quantity INT,
+    ModifiedDate DATETIME
 )   
 
-SELECT * FROM t_products
-
-INSERT INTO dbo.t_products
-   ([name],[type],[price],[quantity],[modified_date])
+INSERT INTO dbo.product
+   ([Name],[Type],[Price],[Quantity],[ModifiedDate])
 VALUES
    ('Surface', 'Laptop', 150000, 1, GETDATE()),
    ('Diary Milk Silk', 'Choclate', 100, 5, GETDATE()),
    ('RE Classic 350', 'Bike', 200000, 1, GETDATE()),
-   ('Parker', 'Pen', 250, 1, GETDATE())
+   ('Parker', 'Pen', 250.49, 1, GETDATE())
 GO
+
+SELECT * FROM product
+
+
